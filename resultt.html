@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marksheet</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="box">
+
+    <h2>Your Marksheet</h2>
+
+    <img id="resultImage" src="" alt="Marksheet" style="width:100%;">
+
+    <br><br>
+
+    <button onclick="window.print()">Print</button>
+
+</div>
+
+<script>
+const img = localStorage.getItem("resultImage");
+
+if (img) {
+    document.getElementById("resultImage").src = img;
+} else {
+    document.body.innerHTML = "<h2>No Result Found</h2>";
+}
+</script>
+
+</body>
+</html>
